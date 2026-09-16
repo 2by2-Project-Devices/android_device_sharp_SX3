@@ -1,9 +1,0 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.android.settings.sbuya.regulatory.softbank">
-    <overlay
-        android:isStatic="true"
-        android:priority="800"
-        android:requiredSystemPropertyName="ro.boot.hardware.sku"
-        android:requiredSystemPropertyValue="RA07507-102X"
-        android:targetPackage="com.android.settings" />
-</manifest>

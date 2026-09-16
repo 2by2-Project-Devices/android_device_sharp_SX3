@@ -1,5 +1,6 @@
 # Esim
 masterclear.allow_retain_esim_profiles_after_fdr=true
+persist.radio.sar.cmd=1
 
 # Bluetooth
 bluetooth.device_id.vendor_id=0x0046
