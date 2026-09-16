@@ -1,0 +1,2 @@
+import /vendor/etc/init/hw/init.ftm.rc
+import /vendor/etc/init/hw/init.sx3.target.rc

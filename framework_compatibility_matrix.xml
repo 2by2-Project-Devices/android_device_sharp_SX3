@@ -230,7 +230,7 @@
         </interface>
     </hal>
     <hal format="aidl">
-        <name>com.fcnt.hardware.biometrics.fingerprint</name>
+        <name>com.sharp.hardware.biometrics.fingerprint</name>
         <interface>
             <name>IFcntExlider</name>
             <instance>default</instance>

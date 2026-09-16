@@ -50,6 +50,7 @@
                 <item>Earpiece</item>
                 <item>Built-In Mic</item>
                 <item>Built-In Back Mic</item>
+                <item>FM Tuner Out</item>
                 <item>FM Tuner In</item>
                 <item>Voice Call In</item>
             </attachedDevices>
@@ -166,7 +167,7 @@
                 </devicePort>
                 <devicePort tagName="BT SCO Headset Mic" type="AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000" channelMasks="AUDIO_CHANNEL_IN_STEREO"/>
+                             samplingRates="8000 16000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </devicePort>
                 <devicePort tagName="AUX Digital In" type="AUDIO_DEVICE_IN_AUX_DIGITAL" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"

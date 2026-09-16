@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_sbuya.mk
+    $(LOCAL_DIR)/lineage_SX3.mk

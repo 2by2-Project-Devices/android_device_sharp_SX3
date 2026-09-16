@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/fcnt/sbuya
+DEVICE_PATH := device/sharp/SX3
 
 # Enforce generic ramdisk allow list
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
@@ -82,27 +82,26 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    fstab.mt6835 \
+    fstab.mt6833 \
     init.connectivity.rc \
     init.connectivity.common.rc \
     init_connectivity.rc \
     init.insmod.sh \
-    init.mmi.chipset.rc \
-    init.mmi.overlay.rc \
-    init.mmi.rc \
-    init.recovery.mt6835.rc \
-    init.mt6835.usb.rc \
-    init.mt6835.power.rc \
-    init.mt6835.rc \
+    init.recovery.mt6833.rc \
+    init.mt6833.usb.rc \
+    init.mt6833.power.rc \
+    init.mt6833.rc \
+    init.mtk.target.rc \
     init.mtkgki.rc \
     init.oem.hw.sh \
     init.oem.fingerprint2.sh \
     init.project.rc \
     init.sensor_2_0.rc \
-    ueventd.mt6835.rc
+    init.sx3.target.rc \
+    ueventd.mt6833.rc
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/init/fstab.mt6835:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.mt6835
+    $(DEVICE_PATH)/init/fstab.mt6833:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.mt6833
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -154,9 +153,6 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot-service.example_recovery \
     fastbootd
 
-# FCNTParts
--include packages/apps/FCNTParts/device.mk
-
 # Fingerprint
 PRODUCT_PACKAGES += \
     com.motorola.hardware.biometric.fingerprint@1.0
@@ -164,19 +160,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
-
 # GNSS
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
 
 # Graphics
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.3-service \
     android.hardware.memtrack-service.mediatek
 
 # Health
@@ -205,7 +194,7 @@ PRODUCT_PACKAGES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.sbuya
+    android.hardware.lights-service.SX3
 
 # Omadm
 PRODUCT_COPY_FILES += \
@@ -252,26 +241,23 @@ PRODUCT_COPY_FILES += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
-    EuiccOverlaySbuya \
-    FrameworkOverlaySbuya \
-    SettingsOverlaySbuya \
-    SystemUIOverlaySbuya \
+    EuiccOverlaySX3 \
+    FrameworkOverlaySX3 \
+    SettingsOverlaySX3 \
+    SystemUIOverlaySX3 \
     NexusLauncherDeviceOverlay \
-    NfcOverlaySbuya \
-    TetheringOverlaySbuya \
-    WifiOverlaySbuya \
-    TelephonyOverlaySbuya \
-    RegulatoryOverlayRA07507-101X \
-    RegulatoryOverlayRA07507-102X \
-    RegulatoryOverlayRA07507-105X
+    NfcOverlaySX3 \
+    TetheringOverlaySX3 \
+    WifiOverlaySX3 \
+    TelephonyOverlaySX3
 
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay
 
 PRODUCT_PACKAGES += \
-    LineageApertureOverlaySbuya \
-    LineageSdkOverlaySbuya \
-    CustomSettingsProviderOverlaySbuya
+    LineageApertureOverlaySX3 \
+    LineageSdkOverlaySX3 \
+    CustomSettingsProviderOverlaySX3
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/component-overrides-regulatory-info.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/component-overrides-regulatory-info.xml
@@ -324,7 +310,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
     android.hardware.sensors@2.0-subhal-impl-1.0 \
-    sensors.sbuya
+    sensors.SX3
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
@@ -372,7 +358,7 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set_bool,mediatek_wifi_hal,use_pre_u_qpr2_struct,true)
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
-    hostapd\
+    hostapd \
     wpa_supplicant \
     libwifi-hal-wrapper
 
@@ -383,4 +369,4 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/fcnt/sbuya/sbuya-vendor.mk)
+$(call inherit-product, vendor/sharp/SX3/SX3-vendor.mk)

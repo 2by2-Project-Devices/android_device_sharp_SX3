@@ -1,0 +1,19 @@
+import /vendor/etc/init/hw/init.fingerprint.fpc1541s_sx3.rc
+
+import /vendor/etc/init/hw/init.SNxxx.nfc.rc
+import /vendor/etc/init/hw/init.SNxxx.se.rc
+
+import /vendor/etc/init/hw/init.sx3.fs.rc
+import /vendor/etc/init/hw/init.sx3.battery.rc
+
+import /vendor/etc/init/hw/init.sx3.thermal.rc
+#battlogd
+import /vendor/etc/init/battlogd.rc
+#resetlog
+import /vendor/etc/init/resetlog.rc
+
+import /vendor/etc/init/hw/init.sx3.key.rc
+
+import /vendor/etc/init/hw/init.sx3.smartpa.rc
+
+import /vendor/etc/init/hw/init.sx3.zram.rc
