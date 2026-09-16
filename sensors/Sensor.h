@@ -17,7 +17,7 @@
 #pragma once
 
 #include <android/hardware/sensors/2.1/types.h>
-#include <fcntl.h>
+#include <sharpl.h>
 #include <poll.h>
 #include <unistd.h>
 

@@ -26,7 +26,7 @@
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.motorola                 u:object_r:hal_fingerprint_default_exec:s0
 
 # Lights
-/vendor/bin/hw/android\.hardware\.lights-service\.sbuya                              u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/android\.hardware\.lights-service\.SX3                              u:object_r:hal_light_default_exec:s0
 
 # Media
 /vendor/bin/hw/android\.hardware\.media\.c2-mtk-service                              u:object_r:mtk_hal_c2_exec:s0

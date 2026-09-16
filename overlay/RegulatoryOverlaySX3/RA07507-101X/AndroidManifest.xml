@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.android.settings.SX3.regulatory.docomo">
+    <overlay
+        android:isStatic="true"
+        android:priority="800"
+        android:requiredSystemPropertyName="ro.boot.hardware.sku"
+        android:requiredSystemPropertyValue="RA07507-101X"
+        android:targetPackage="com.android.settings" />
+</manifest>

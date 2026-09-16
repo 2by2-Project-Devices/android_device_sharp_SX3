@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.lights-service.sbuya"
+#define LOG_TAG "android.hardware.lights-service.SX3"
 
 #include "Lights.h"
 

@@ -1,4 +1,4 @@
 vendor.dolby.dms.IDms/default                                      u:object_r:hal_dms_service:s0
 motorola.hardware.camera.imgtuner.aidl.IImageTuning/default          u:object_r:hal_camera_service:s0
-com.fcnt.hardware.biometrics.fingerprint.IFcntExlider/default        u:object_r:hal_fingerprint_test_service:s0
+com.sharp.hardware.biometrics.fingerprint.IFcntExlider/default        u:object_r:hal_fingerprint_test_service:s0
 com.motorola.hardware.biometric.fingerprint.IMotoCaptiveSensorTest/default      u:object_r:hal_fingerprint_test_service:s0

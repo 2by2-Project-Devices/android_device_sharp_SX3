@@ -14,10 +14,10 @@
 // limitations under the License.
 
 cc_binary {
-    name: "android.hardware.lights-service.sbuya",
+    name: "android.hardware.lights-service.SX3",
     relative_install_path: "hw",
-    init_rc: ["android.hardware.lights.sbuya.rc"],
-    vintf_fragments: ["android.hardware.lights.sbuya.xml"],
+    init_rc: ["android.hardware.lights.SX3.rc"],
+    vintf_fragments: ["android.hardware.lights.SX3.xml"],
     vendor: true,
     shared_libs: [
         "libbase",

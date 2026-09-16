@@ -1,7 +1,7 @@
-# Android Device tree for the arrows We3
+# Android Device tree for the AQUOS wish3
 
 ## Device picture
-![arrows We3](https://network.mobile.rakuten.co.jp/assets/img/product/arrows-we3/pht-device-00.png "arrows We3")
+![AQUOS wish3](https://www.ymobile.jp/lineup/wish3/images/mv_01_01.png "AQUOS wish3")
 
 ```
 #
