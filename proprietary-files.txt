@@ -34,6 +34,7 @@ vendor/lib64/libblisrc32_vendor.so
 vendor/lib64/libbwc.so
 vendor/lib64/libcvsd_mtk.so
 vendor/lib64/libladder.so
+vendor/lib64/libmtkshifter_vendor.so
 vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmtktinyxml.so
 vendor/lib64/librt_extamp_intf.so
@@ -832,18 +833,21 @@ vendor/lib64/hw/hwcomposer.mt6833.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so
 vendor/lib64/libaal_cust.so
 vendor/lib64/libaal_key.so
+vendor/lib64/libaal_sec.so
 vendor/lib64/libcomposer_ext.so
 vendor/lib64/libion_mtk.so
 vendor/lib64/libion_ulit.so
 vendor/lib64/libmml.so
 vendor/lib64/libmmprofile.so
 vendor/lib64/libpixelflinger.so
+vendor/lib64/libpq_sec.so
 vendor/lib64/libpqframework.so
 vendor/lib64/libpqhdrmetaparser.so
 vendor/lib64/libpqsharememory.so
 vendor/lib64/libpqtuning.so
 vendor/lib64/libpqxmlparser.so
 vendor/lib64/librgbwlightsensor.so
+vendor/lib64/libsdrparser.so
 vendor/lib64/arm.graphics-V5-ndk.so
 vendor/lib64/libaalservice.so
 vendor/lib64/libaiselector.so
@@ -886,7 +890,6 @@ vendor/usr/idc/uinput-fpc.idc
 vendor/usr/keylayout/uinput-fpc.kl
 
 # Fuelgauge
-vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
 vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/fuelgauged_nvram_init.rc
@@ -978,20 +981,39 @@ vendor/lib64/libthha.so;DISABLE_CHECKELF
 
 # Media
 vendor/etc/VideoLog_dynamic.ds
+system/lib64/libstagefright_bufferqueue_helper.so:vendor/lib64/libstagefright_bufferqueue_helper-v35.so;FIX_SONAME
+vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
+vendor/bin/jpegtool
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
+vendor/etc/seccomp_policy/mediacodec.policy
+vendor/etc/seccomp_policy/mediaextractor.policy
+vendor/etc/seccomp_policy/mediaswcodec.policy
+vendor/etc/vintf/manifest/manifest_media_c2_default.xml
 vendor/etc/mtk_platform_codecs_config.xml
 vendor/lib64/libJpgEncPipe.so
+vendor/lib64/libcodec2_fsr.so
+vendor/lib64/libcodec2_hidl@1.0.so:vendor/lib64/libcodec2_hidl@1.0-v34.so;FIX_SONAME
+vendor/lib64/libcodec2_hidl@1.1.so:vendor/lib64/libcodec2_hidl@1.1-v34.so;FIX_SONAME
+vendor/lib64/libcodec2_hidl@1.2.so:vendor/lib64/libcodec2_hidl@1.2-v34.so;FIX_SONAME
+vendor/lib64/libcodec2_hidl_plugin.so:vendor/lib64/libcodec2_hidl_plugin-v34.so;FIX_SONAME
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
 vendor/lib64/libcodec2_mtk_venc.so
+vendor/lib64/libcodec2_soft_common.so:vendor/lib64/libcodec2_soft_common-v34.so;FIX_SONAME
+vendor/lib64/libcodec2_vndk.so:vendor/lib64/libcodec2_vndk-v34.so;FIX_SONAME
 vendor/lib64/libcodec2_vpp_fa_plugin.so
 vendor/lib64/libcodec2_vpp_mi_plugin.so
 vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libformatter.so
+vendor/lib64/libicd_decoder.so
 vendor/lib64/libjpeg-alpha-oal_vendor.so
 vendor/lib64/libjpeg-alpha_vendor.so
+vendor/lib64/libsfplugin_ccodec_utils.so:vendor/lib64/libsfplugin_ccodec_utils-v34.so;FIX_SONAME
 vendor/lib64/libvcodec_oal.so;DISABLE_CHECKELF
 vendor/lib64/libvcodecdrv_header_stub.so
+vendor/lib64/libvpu5.so
 
 # MediaTek Vision Processing Unit (System)
 system_ext/lib64/libmvpu_cic_ci_compiler.mtk.so
@@ -1293,6 +1315,7 @@ vendor/lib64/libTEECommon.so
 vendor/lib64/libgz_gp_client.so
 vendor/lib64/libgz_uree.so
 vendor/lib64/vendor.trustonic.tee-V1-ndk.so
+vendor/lib64/vendor.trustonic.tui-V1-ndk.so
 
 # USB
 vendor/bin/hw/android.hardware.usb-aidl-service.mediatekv1.0
@@ -1315,3 +1338,34 @@ vendor/lib64/libwifitest.so
 # WIFI (firmware)
 vendor/firmware/WMT_SOC.cfg
 vendor/firmware/wifi.cfg
+
+vendor/lib64/vendor.mediatek.hardware.apmonitor-V1-ndk.so
+vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
+vendor/lib64/vendor.fih.fihloghidl@1.0.so
+vendor/lib64/vendor.mediatek.hardware.mbrain-V6-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.sim-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.dch-V2-ndk.so
+vendor/lib64/libmtksysutils.so
+vendor/lib64/vendor.mediatek.hardware.netdagent-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so
+vendor/lib64/libneuralnetworks_sl_driver_mtk_legacy_prebuilt.so
+vendor/lib64/vendor.mediatek.hardware.gpuserv-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
+vendor/lib64/mt6833/libmmagent.so
+vendor/lib64/vendor.mediatek.hardware.mmagent-V1-ndk.so
+vendor/lib64/libsilkybrightnesscore.so
+vendor/lib64/lib_bsscore.so
+vendor/lib64/libcamalgo.mfnr.so
+vendor/lib64/libmfllcore.so
+vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
+vendor/lib64/libAncDlmk.so
+vendor/lib64/libANCBeauty.so
+vendor/lib64/libAncBeautifyImage.so
+vendor/lib64/libAncBeautify-hal.so
+vendor/lib64/libchromanr.so
+vendor/lib64/libcamalgo.vpudsdn.so
+vendor/lib64/libmtkcam_hal_aidl_provider.so
+vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
+vendor/lib64/libmtkcam_hal_aidl_common.so
+vendor/lib64/libmtkcam_hal_aidl_device.so
+vendor/lib64/libmtkcam_hal_aidl_utils.so
