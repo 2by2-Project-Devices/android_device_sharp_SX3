@@ -915,6 +915,7 @@ vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
 
 # Connectivity
 vendor/etc/init/init.connfem.rc
+vendor/firmware/connfem.cfg
 vendor/firmware/remoteproc_scp
 vendor/lib/libconnfem.so
 vendor/lib64/libconnfem.so
