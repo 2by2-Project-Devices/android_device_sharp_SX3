@@ -7,12 +7,10 @@ Subject: [PATCH 2/2] MtkGbaService: Remove remaining TelephonyMetrics
 - Following the previous commit, drop all references to it.
 
 Signed-off-by: Cyber Knight <cyberknight755@gmail.com>
----
- .../com/mediatek/gbaservice/ril/GbaRIL.smali  | 33 -------------------
- 1 file changed, 33 deletions(-)
 
+SX3 port: Keep const/4 v1, 0x0 before mMtkRadioExModemProxy initialization; the preceding v1 contains a SparseArray.
+---
 diff --git a/smali/com/mediatek/gbaservice/ril/GbaRIL.smali b/smali/com/mediatek/gbaservice/ril/GbaRIL.smali
-index da7b8b4..d3fd10e 100644
 --- a/smali/com/mediatek/gbaservice/ril/GbaRIL.smali
 +++ b/smali/com/mediatek/gbaservice/ril/GbaRIL.smali
 @@ -20,8 +20,6 @@
@@ -40,23 +38,21 @@ index da7b8b4..d3fd10e 100644
  .method static bridge synthetic -$$Nest$mclearWakeLock(Lcom/mediatek/gbaservice/ril/GbaRIL;I)Z
      .locals 0
  
-@@ -200,15 +189,6 @@
+@@ -199,13 +188,6 @@
+     invoke-direct {v1}, Landroid/util/SparseArray;-><init>()V
  
      iput-object v1, p0, Lcom/mediatek/gbaservice/ril/GbaRIL;->mRequestList:Landroid/util/SparseArray;
- 
+-
 -    .line 265
 -    invoke-static {}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->getInstance()Lcom/android/internal/telephony/metrics/TelephonyMetrics;
 -
 -    move-result-object v1
 -
 -    iput-object v1, p0, Lcom/mediatek/gbaservice/ril/GbaRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
--
--    const/4 v1, 0x0
--
-     .line 269
-     iput-object v1, p0, Lcom/mediatek/gbaservice/ril/GbaRIL;->mMtkRadioExModemProxy:Lvendor/mediatek/hardware/mtkradioex/modem/IMtkRadioExModem;
  
-@@ -2307,19 +2287,6 @@
+     const/4 v1, 0x0
+ 
+@@ -2307,20 +2289,6 @@
  
      .line 709
      :goto_0
@@ -73,9 +69,9 @@ index da7b8b4..d3fd10e 100644
 -    move-object v6, p3
 -
 -    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilSolicitedResponse(IIIILjava/lang/Object;)V
- 
+-
      .line 711
      iget p2, p2, Landroid/hardware/radio/RadioResponseInfo;->type:I
+ 
 -- 
-2.52.0
-
+2.53.0
