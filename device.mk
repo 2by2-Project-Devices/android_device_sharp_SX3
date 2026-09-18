@@ -87,9 +87,6 @@ PRODUCT_PACKAGES += \
     init.connectivity.common.rc \
     init_connectivity.rc \
     init.insmod.sh \
-    init.mmi.chipset.rc \
-    init.mmi.overlay.rc \
-    init.mmi.rc \
     init.recovery.mt6833.rc \
     init.mt6833.usb.rc \
     init.mt6833.power.rc \
