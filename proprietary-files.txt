@@ -1286,7 +1286,6 @@ vendor/lib/libcmdl_ndk.mtk.vndk.so
 vendor/lib/libnir_neon_driver.so
 vendor/lib/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME;MODULE_SUFFIX=_vendor
 vendor/lib/libtflite_mtk.so;DISABLE_CHECKELF;MODULE_SUFFIX=_vendor
-vendor/lib/mt6833/libneuron_adapter_mgvi.so;SYMLINK=vendor/lib/libneuron_adapter_mgvi.so
 vendor/lib/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib/vendor.mediatek.hardware.mmagent-V1-ndk.so
 vendor/lib64/APUWareUtilsAidlServer.so;DISABLE_CHECKELF
