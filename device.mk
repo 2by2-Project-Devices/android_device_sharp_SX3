@@ -170,7 +170,6 @@ PRODUCT_COPY_FILES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.3-service \
     android.hardware.memtrack-service.mediatek
 
 # Health

@@ -103,21 +103,3 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
     write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "schedutil"
     write /sys/devices/platform/112b0000.ufshci/clkgate_enable 1
-
-service vendor.gralloc-4-0 /vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
-    class hal animation
-    interface android.hardware.graphics.allocator@4.0::IAllocator default
-    user system
-    group graphics drmrpc
-    capabilities SYS_NICE
-    onrestart restart surfaceflinger
-    task_profiles ProcessCapacityHigh HighPerformance
-
-service vendor.hwcomposer-2-3 /vendor/bin/hw/android.hardware.graphics.composer@2.3-service
-    class hal animation
-    user system
-    group graphics drmrpc
-    capabilities SYS_NICE
-    onrestart restart surfaceflinger
-    task_profiles ProcessCapacityHigh HighPerformance
-    override
