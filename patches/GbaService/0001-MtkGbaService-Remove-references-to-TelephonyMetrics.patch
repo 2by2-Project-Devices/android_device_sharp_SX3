@@ -9,18 +9,17 @@ Google deprecated TelephonyMetrics class in Android 16 QPR2 as it was considered
 
 [cyberknight777: Adapt to cancunf]
 Signed-off-by: Cyber Knight <cyberknight755@gmail.com>
----
- .../gbaservice/ril/GbaRIL$RilHandler.smali      | 17 -----------------
- 1 file changed, 17 deletions(-)
 
+SX3 port: Remove the obsolete metrics callback without changing timeout handling.
+---
 diff --git a/smali/com/mediatek/gbaservice/ril/GbaRIL$RilHandler.smali b/smali/com/mediatek/gbaservice/ril/GbaRIL$RilHandler.smali
-index b6a7888..ad12276 100644
 --- a/smali/com/mediatek/gbaservice/ril/GbaRIL$RilHandler.smali
 +++ b/smali/com/mediatek/gbaservice/ril/GbaRIL$RilHandler.smali
-@@ -154,23 +154,6 @@
+@@ -153,23 +153,6 @@
+     iget-object v0, p1, Lcom/mediatek/gbaservice/ril/RILRequest;->mResult:Landroid/os/Message;
  
      invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
- 
+-
 -    .line 357
 -    iget-object v0, p0, Lcom/mediatek/gbaservice/ril/GbaRIL$RilHandler;->this$0:Lcom/mediatek/gbaservice/ril/GbaRIL;
 -
@@ -37,10 +36,6 @@ index b6a7888..ad12276 100644
 -    iget v3, p1, Lcom/mediatek/gbaservice/ril/RILRequest;->mRequest:I
 -
 -    invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilTimeoutResponse(III)V
--
+ 
      .line 359
      :cond_3
-     iget-object p0, p0, Lcom/mediatek/gbaservice/ril/GbaRIL$RilHandler;->this$0:Lcom/mediatek/gbaservice/ril/GbaRIL;
--- 
-2.52.0
-
