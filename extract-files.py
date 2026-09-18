@@ -57,7 +57,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/librgbwlightsensor.so': blob_fixup()
         .replace_needed('libsensorndkbridge.so', 'android.hardware.sensors@1.0-convert-shared.so')
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
-    ('vendor/lib64/libaalservice.so', 'vendor/lib64/libcam.utils.sensorprovider.so'): blob_fixup()
+    ('vendor/lib/libaalservice.so', 'vendor/lib64/libaalservice.so',
+     'vendor/lib64/libcam.utils.sensorprovider.so'): blob_fixup()
         .replace_needed('libsensorndkbridge.so', 'android.hardware.sensors@1.0-convert-shared.so')
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
     ('vendor/lib64/librt_extamp_intf.so', 'vendor/lib64/libpqxmlparser.so',
@@ -91,18 +92,21 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.audio.common-V1-ndk.so', 'android.hardware.audio.common-V2-ndk.so'),
     'vendor/lib64/libarmnn_ndk.mtk.vndk.so': blob_fixup()
         .add_needed('liblog.so'),
-    'vendor/lib64/libcodec2_fsr.so': blob_fixup()
+    ('vendor/lib/libcodec2_fsr.so', 'vendor/lib64/libcodec2_fsr.so'): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V4-ndk.so', 'android.hardware.graphics.common-V7-ndk.so')
         .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so')
         .replace_needed('libui.so', 'libui-v34.so')
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
-    ('vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so',
+    ('vendor/lib/hw/vendor.mediatek.hardware.pq_aidl-impl.so',
+     'vendor/lib/vendor.mediatek.hardware.pq_aidl-V2-ndk.so',
+     'vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so',
      'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V2-ndk.so',
      'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so'): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V4-ndk.so', 'android.hardware.graphics.common-V7-ndk.so')
         .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so')
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
-    'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so': blob_fixup()
+    ('vendor/lib/vendor.mediatek.hardware.pq_aidl-V7-ndk.so',
+     'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so'): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V4-ndk.so', 'android.hardware.graphics.common-V7-ndk.so')
         .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
     ('vendor/lib64/libneuralnetworks_sl_driver_mtk_legacy_prebuilt.so', 'vendor/lib64/libANCBeauty.so'): blob_fixup()
@@ -123,9 +127,13 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libcodec2_hidl@1.1.so', 'libcodec2_hidl@1.1-v34.so')
         .replace_needed('libcodec2_hidl@1.2.so', 'libcodec2_hidl@1.2-v34.so')
         .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk-v34.so'),
-    ('vendor/lib64/libgpud.so', 'vendor/lib64/libmtkcam_grallocutils.so'): blob_fixup()
+    ('vendor/lib/libgpu_aux.so', 'vendor/lib/libgpud.so',
+     'vendor/lib64/libgpud.so',
+     'vendor/lib64/libmtkcam_grallocutils.so'): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
-    ('vendor/lib64/egl/libGLES_mali.so',
+    ('vendor/lib/egl/libGLES_mali.so',
+     'vendor/lib/hw/android.hardware.graphics.allocator-V2-mediatek.so',
+     'vendor/lib64/egl/libGLES_mali.so',
      'vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so',
      'vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek'): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
