@@ -1,5 +1,5 @@
 connect: 1
-sharpl64: 1
+fcntl64: 1
 socket: 1
 writev: 1
 clock_nanosleep: 1
