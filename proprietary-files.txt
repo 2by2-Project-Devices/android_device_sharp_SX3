@@ -1137,6 +1137,7 @@ vendor/lib64/libkmsetkey.so
 vendor/lib64/libthha.so;DISABLE_CHECKELF
 
 # Media
+system/lib/libstagefright_bufferqueue_helper.so:vendor/lib/libstagefright_bufferqueue_helper-v35.so;FIX_SONAME
 system/lib64/libstagefright_bufferqueue_helper.so:vendor/lib64/libstagefright_bufferqueue_helper-v35.so;FIX_SONAME
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
 vendor/bin/jpegtool
