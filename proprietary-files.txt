@@ -1382,6 +1382,7 @@ vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 # Radio
 vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd
+vendor/bin/gsm0710muxd
 vendor/bin/hw/mtkfusionrild
 vendor/bin/hw/vendor.mediatek.hardware.mmagent-service
 vendor/bin/muxreport
@@ -1397,6 +1398,7 @@ vendor/etc/ecc_list_OP17.xml
 vendor/etc/ecc_list_OP18.xml
 vendor/etc/ecc_list_OP236.xml
 vendor/etc/ecc_list_preference.xml
+vendor/etc/init/gsm0710muxd.rc
 vendor/etc/init/init.cccimdinit.rc
 vendor/etc/init/init.cccirpcd.rc
 vendor/etc/init/mtkrild.rc
