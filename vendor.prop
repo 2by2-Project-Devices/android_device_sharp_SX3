@@ -188,6 +188,7 @@ ro.vendor.mtk_nn_baseline_support=1
 ro.vendor.mtk_nn_quant_preferred=1
 
 # Keystore
+ro.dummy.api_level=30
 ro.hardware.kmsetkey=trustonic
 
 # Radio

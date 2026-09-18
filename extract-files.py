@@ -175,6 +175,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libui.so', 'libui-v34.so'),
     'vendor/lib64/libcodec2_vndk-v34.so': blob_fixup()
         .replace_needed('android.hardware.media.bufferpool2-V1-ndk.so', 'android.hardware.media.bufferpool2-V2-ndk.so'),
+    'vendor/bin/hw/android.hardware.security.keymint@3.0-service.trustonic_norkp': blob_fixup()
+        .binary_regex_replace(rb'ro\.board\.api_level\x00', b'ro.dummy.api_level\x00'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
