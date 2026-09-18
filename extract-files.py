@@ -133,8 +133,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     ('vendor/lib/egl/libGLES_mali.so',
      'vendor/lib/hw/android.hardware.graphics.allocator-V2-mediatek.so',
+     'vendor/lib/hw/mapper.mediatek.so',
      'vendor/lib64/egl/libGLES_mali.so',
      'vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so',
+     'vendor/lib64/hw/mapper.mediatek.so',
      'vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek'): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     ('vendor/lib/libcodec2_hidl@1.0-v34.so', 'vendor/lib64/libcodec2_hidl@1.0-v34.so'): blob_fixup()

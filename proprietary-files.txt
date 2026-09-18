@@ -1079,6 +1079,8 @@ vendor/etc/gralloc/gpu.xml
 vendor/etc/gralloc/vpu.xml
 vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc
 vendor/etc/mali_platform.config
+vendor/etc/vintf/manifest/manifest_allocator.xml
+vendor/etc/vintf/manifest/mapper.mediatek.xml
 vendor/lib/arm.mali.platform-V2-ndk.so
 vendor/lib/egl/egl.cfg
 vendor/lib/egl/libGLES_mali.so
@@ -1089,6 +1091,7 @@ vendor/lib/egl/libMEOW_qt.so
 vendor/lib/egl/libMEOW_trace.so
 vendor/lib/hw/android.hardware.graphics.allocator-V2-mediatek.so
 vendor/lib/hw/gralloc.default.so
+vendor/lib/hw/mapper.mediatek.so
 vendor/lib/hw/vulkan.mali.so
 vendor/lib/libDefaultFpsActor.so
 vendor/lib/libFrameRecord.so
@@ -1109,6 +1112,7 @@ vendor/lib64/egl/libMEOW_qt.so
 vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
 vendor/lib64/hw/gralloc.default.so
+vendor/lib64/hw/mapper.mediatek.so
 vendor/lib64/hw/vulkan.mali.so
 vendor/lib64/libDefaultFpsActor.so
 vendor/lib64/libFrameRecord.so
