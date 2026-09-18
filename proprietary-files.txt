@@ -913,6 +913,12 @@ vendor/lib64/vendor.mediatek.hardware.camera.postproc-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
 
+# Camera (firmware)
+vendor/bin/lib3a.ccu.ddr
+vendor/bin/lib3a.ccu.dm
+vendor/bin/lib3a.ccu.pm
+vendor/firmware/lib3a.ccu
+
 # Connectivity
 vendor/etc/init/init.connfem.rc
 vendor/firmware/connfem.cfg
