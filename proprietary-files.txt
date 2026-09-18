@@ -629,6 +629,10 @@ vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 # Bluetooth (Firmware)
 vendor/etc/init/init.bt_drv.rc
 vendor/firmware/BT_FW.cfg
+vendor/firmware/soc2_2_ram_bt_1_1_hdr.bin
+vendor/firmware/soc2_2_ram_bt_1a_1_hdr.bin
+vendor/firmware/soc2_2_ram_mcu_1_1_hdr.bin
+vendor/firmware/soc2_2_ram_mcu_1a_1_hdr.bin
 
 # Camera
 vendor/bin/hw/camerahalserver
@@ -1582,5 +1586,9 @@ vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
 vendor/lib64/libwifitest.so
 
 # WIFI (firmware)
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1_1.bin
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1a_1.bin
 vendor/firmware/WMT_SOC.cfg
+vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin
+vendor/firmware/soc2_2_ram_wifi_1a_1_hdr.bin
 vendor/firmware/wifi.cfg
