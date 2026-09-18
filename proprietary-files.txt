@@ -1324,6 +1324,8 @@ vendor/lib64/vendor.mediatek.hardware.apuware.utils-V1-ndk.so;MODULE_SUFFIX=_ven
 vendor/lib64/vendor.mediatek.hardware.mmagent-V1-ndk.so
  
 # NFC
+vendor/etc/init/hw/init.SNxxx.nfc.rc
+vendor/etc/init/hw/init.SNxxx.se.rc
 vendor/etc/libese-nxp.conf
 vendor/etc/libnfc-nci.conf
 vendor/etc/libnfc-nxp.conf
