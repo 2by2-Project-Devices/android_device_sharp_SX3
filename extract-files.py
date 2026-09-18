@@ -61,9 +61,14 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/libcam.utils.sensorprovider.so'): blob_fixup()
         .replace_needed('libsensorndkbridge.so', 'android.hardware.sensors@1.0-convert-shared.so')
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
-    ('vendor/lib64/librt_extamp_intf.so', 'vendor/lib64/libpqxmlparser.so',
+    ('vendor/lib/hw/audio.primary.mt6833.so',
+     'vendor/lib/libpqxmlparser.so',
+     'vendor/lib/librt_extamp_intf.so',
+     'vendor/lib64/hw/audio.primary.mt6833.so',
+     'vendor/lib64/hw/hwcomposer.mt6833.so',
+     'vendor/lib64/libpqxmlparser.so',
+     'vendor/lib64/librt_extamp_intf.so',
      'vendor/lib64/libsilkybrightnesscore.so'): blob_fixup()
-        .replace_needed('libtinyxml2.so', 'libtinyxml2-v31.so')
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'vendor/bin/hw/mtkfusionrild': blob_fixup()
         .add_needed('libutils-v32.so'),
@@ -99,12 +104,14 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     ('vendor/lib/hw/vendor.mediatek.hardware.pq_aidl-impl.so',
      'vendor/lib/vendor.mediatek.hardware.pq_aidl-V2-ndk.so',
+     'vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so',
      'vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so',
      'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V2-ndk.so',
      'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so'): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V4-ndk.so', 'android.hardware.graphics.common-V7-ndk.so')
         .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so')
-        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so')
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     ('vendor/lib/vendor.mediatek.hardware.pq_aidl-V7-ndk.so',
      'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so'): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V4-ndk.so', 'android.hardware.graphics.common-V7-ndk.so')

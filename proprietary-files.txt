@@ -1283,6 +1283,7 @@ vendor/lib/libcmdl_ndk.mtk.vndk.so
 vendor/lib/libnir_neon_driver.so
 vendor/lib/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME;MODULE_SUFFIX=_vendor
 vendor/lib/libtflite_mtk.so;DISABLE_CHECKELF;MODULE_SUFFIX=_vendor
+vendor/lib/mt6833/libneuron_adapter_mgvi.so;SYMLINK=vendor/lib/libneuron_adapter_mgvi.so
 vendor/lib/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib/vendor.mediatek.hardware.mmagent-V1-ndk.so
 vendor/lib64/APUWareUtilsAidlServer.so;DISABLE_CHECKELF
@@ -1296,6 +1297,7 @@ vendor/lib64/libnir_neon_driver.so
 vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME;MODULE_SUFFIX=_vendor
 vendor/lib64/libtflite_mtk.so;DISABLE_CHECKELF;MODULE_SUFFIX=_vendor
 vendor/lib64/mt6833/libmmagent.so;SYMLINK=vendor/lib64/libmmagent.so
+vendor/lib64/mt6833/libneuron_adapter_mgvi.so;SYMLINK=vendor/lib64/libneuron_adapter_mgvi.so
 vendor/lib64/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.mediatek.hardware.mmagent-V1-ndk.so
@@ -1348,9 +1350,6 @@ vendor/lib64/libpowerhalwrap_vendor.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower-V3-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower_applist-V3-ndk.so
-
-# Tinyxml
-system/lib64/libtinyxml2.so:vendor/lib64/libtinyxml2-v31.so;FIX_SONAME
 
 # Touch firmware
 vendor/firmware/SX3_FT5446U_Conf_MultipleTest_V04_20230608.ini
