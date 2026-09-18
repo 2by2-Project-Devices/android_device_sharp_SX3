@@ -91,11 +91,13 @@ PRODUCT_PACKAGES += \
     init.mt6833.usb.rc \
     init.mt6833.power.rc \
     init.mt6833.rc \
+    init.mtk.target.rc \
     init.mtkgki.rc \
     init.oem.hw.sh \
     init.oem.fingerprint2.sh \
     init.project.rc \
     init.sensor_2_0.rc \
+    init.sx3.target.rc \
     ueventd.mt6833.rc
 
 PRODUCT_COPY_FILES += \

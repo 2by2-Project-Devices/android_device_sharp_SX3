@@ -64,6 +64,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.mtk.target.rc",
+    src: "init.mtk.target.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.recovery.mt6833.rc",
     src: "init.recovery.mt6833.rc",
     relative_install_path: "init",
@@ -94,6 +101,13 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.sensor_2_0.rc",
     src: "init.sensor_2_0.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.sx3.target.rc",
+    src: "init.sx3.target.rc",
     relative_install_path: "init/hw",
     vendor: true,
 }
