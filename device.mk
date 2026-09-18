@@ -355,7 +355,7 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.mediatek
 
 # WiFi
-$(call soong_config_set_bool,mediatek_wifi_hal,use_pre_u_qpr2_struct,true)
+$(call soong_config_set_bool,mediatek_wifi_hal,use_pre_baklava_qpr0_struct,true)
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
