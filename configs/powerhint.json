@@ -2,7 +2,7 @@
   "Nodes": [
     {
       "Name": "MemFreq",
-      "Path": "/sys/devices/platform/soc/1c00f000.dvfsrc/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq",
+      "Path": "/sys/devices/platform/10012000.dvfsrc/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq",
       "Values": [
         "4266000000",
         "3200000000",
@@ -55,16 +55,7 @@
         "30",
         "31",
         "32",
-        "33",
-        "34",
-        "35",
-        "36",
-        "37",
-        "38",
-        "39",
-        "40",
-        "41",
-        "42"
+        "33"
       ],
       "ResetOnInit": true,
       "DefaultIndex": 0
