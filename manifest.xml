@@ -140,17 +140,10 @@
         </interface>
         <fqname>@1.0::IDevice/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>android.hardware.secure_element</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
-        <interface>
-            <name>ISecureElement</name>
-            <instance>SIM1</instance>
-            <instance>SIM2</instance>
-        </interface>
-        <fqname>@1.2::ISecureElement/SIM1</fqname>
-        <fqname>@1.2::ISecureElement/SIM2</fqname>
+        <fqname>ISecureElement/SIM1</fqname>
+        <fqname>ISecureElement/SIM2</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.soundtrigger</name>
@@ -214,35 +207,21 @@
         </interface>
         <fqname>@1.0::IStats/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.apmonitor</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>IApmService</name>
-            <instance>apm_hidl_service</instance>
-        </interface>
-        <fqname>@2.0::IApmService/apm_hidl_service</fqname>
+        <fqname>IApmService/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.apuware.utils</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
+        <version>1</version>
         <interface>
             <name>IApuwareUtils</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.0::IApuwareUtils/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.atci</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IAtcid</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IAtcid/default</fqname>
+        <fqname>IAtcid/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.bluetooth.audio</name>
@@ -274,45 +253,21 @@
         <version>1</version>
         <fqname>IPostDevice/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.composer_ext</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IComposerExt</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IComposerExt/default</fqname>
+        <fqname>IComposerExt/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.dmc</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
-        <interface>
-            <name>IDmcService</name>
-            <instance>dmc_hidl_service</instance>
-        </interface>
-        <fqname>@1.2::IDmcService/dmc_hidl_service</fqname>
+        <fqname>IDmcService/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.mmagent</name>
-        <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>IMMAgent</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.1::IMMAgent/default</fqname>
+        <fqname>IMMAgent/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.mms</name>
-        <transport>hwbinder</transport>
-        <version>1.7</version>
-        <interface>
-            <name>IMms</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.7::IMms/default</fqname>
+        <fqname>IMms/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.mtkpower</name>
@@ -400,15 +355,9 @@
         </interface>
         <fqname>@1.2::IAgent/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.nvram</name>
-        <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>INvram</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.1::INvram/default</fqname>
+        <fqname>INvram/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.nwk_opt</name>
@@ -422,37 +371,20 @@
     </hal>
     <hal format="aidl">
         <name>vendor.mediatek.hardware.pq_aidl</name>
+        <version>7</version>
         <fqname>IPictureQuality_AIDL/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.videotelephony</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IVideoTelephony</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IVideoTelephony/default</fqname>
+        <fqname>IVideoTelephony/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.trustonic.tee</name>
-        <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>ITee</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.1::ITee/default</fqname>
+        <fqname>ITee/default</fqname>
     </hal>
-    <hal format="hidl">
-        <name>vendor.trustonic.tee.tui</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ITui</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ITui/default</fqname>
+    <hal format="aidl">
+        <name>vendor.trustonic.tui</name>
+        <fqname>ITui/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.biometrics.fingerprint</name>
