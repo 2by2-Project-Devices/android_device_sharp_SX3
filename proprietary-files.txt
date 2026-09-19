@@ -1019,6 +1019,7 @@ product/etc/felica/mfs.cfg
 system_ext/priv-app/MobileFeliCaClient_gp/MobileFeliCaClient_gp.apk;PRESIGNED
 
 # Fingerprint
+odm/etc/init/android.hardware.biometrics.fingerprint@2.1-service.fpc.rc
 vendor/bin/fpc_tee_test
 vendor/bin/fqcfingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.fpc
