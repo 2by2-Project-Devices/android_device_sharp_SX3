@@ -79,6 +79,11 @@ vendor/lib64/vendor.mediatek.hardware.audio-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.mbrain-V6-ndk.so
 
+# Audio Effects
+vendor/firmware/awinic_params.bin
+vendor/lib/hw/awinic.audio.effect.so;FIX_SONAME
+vendor/lib64/hw/awinic.audio.effect.so;FIX_SONAME
+
 # Audio (configs)
 vendor/etc/audio_param/AudioParamOptions.xml
 vendor/etc/audio_param/AudioParamOptions_vext.xml
