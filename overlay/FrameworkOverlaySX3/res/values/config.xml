@@ -364,7 +364,7 @@
                 <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z @dp</string>
          @see https://www.w3.org/TR/SVG/paths.html#PathData
          -->
-    <string name="config_mainBuiltInDisplayCutout">M -30,0 L 30,0 L 30,70 L -30,70 Z</string>
+    <string name="config_mainBuiltInDisplayCutout">M-61,0 v58 h122 v-58 h-122z</string>
 
     <!-- If true, the screen can be rotated via the accelerometer in all 4
          rotations as the default behavior. -->
