@@ -181,7 +181,8 @@ PRODUCT_COPY_FILES += \
 # Keymint
 PRODUCT_PACKAGES += \
     libkeymint.vendor \
-    libpuresoftkeymasterdevice.vendor
+    libpuresoftkeymasterdevice.vendor \
+    libtrusty.vendor
 
 # Keystore
 PRODUCT_PACKAGES += \
