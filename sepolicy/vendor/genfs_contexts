@@ -1,14 +1,9 @@
+# Charger
+genfscon sysfs /devices/platform/charger/power_supply/mtk-master-charger u:object_r:sysfs_power_supply:s0
+
 # Extcon
 genfscon sysfs /devices/platform/soc/soc:extcon_usb/extcon/extcon0/cable.0/name  u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/platform/soc/soc:extcon_usb/extcon/extcon0/cable.1/name  u:object_r:sysfs_extcon:s0
-
-# Fingerprint
-genfscon sysfs /devices/virtual/fingerprint/fpc_spi/clk_enable        u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/virtual/fingerprint/fpc_spi/compatible_all    u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/virtual/fingerprint/fpc_spi/device_prepare    u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/virtual/fingerprint/fpc_spi/hw_reset          u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/virtual/fingerprint/fpc_spi/irq               u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/virtual/fingerprint/fpc_spi/wakeup_enable     u:object_r:sysfs_fingerprint:s0
 
 # Graphics
 genfscon sysfs /devices/platform/soc/13000000.mali/dvfs_period u:object_r:sysfs_gpu:s0
@@ -21,6 +16,7 @@ genfscon sysfs /devices/platform/smart_battery/power_supply/battery u:object_r:s
 genfscon sysfs /devices/platform/11e00000.i2c/i2c-0/0-0055/mmi_gauge/bms  u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/11e00000.i2c/i2c-0/0-0066/power_supply/cp-master u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/11e00000.i2c/i2c-0/0-0067/power_supply/cp-slave u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/11e01000.i2c/i2c-5/5-0034/mt6360-chg.2.auto/power_supply u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/soc/1c804000.spmi/spmi-0/0-04/mt6377-gauge/power_supply/battery/capacity               u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/soc/1c804000.spmi/spmi-0/0-04/mt6377-gauge/power_supply/battery/current_now            u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/soc/1c804000.spmi/spmi-0/0-04/mt6377-gauge/power_supply/battery/health                 u:object_r:sysfs_batteryinfo:s0
@@ -42,11 +38,6 @@ genfscon sysfs /devices/platform/soc/11ed0000.i2c/i2c-0/0-0065/power_supply/cp-s
 
 # Input Devices
 genfscon sysfs /devices/virtual/input u:object_r:vendor_sysfs_input:s0
-
-# Motorola Specific filesystem entries
-genfscon proc /bootinfo u:object_r:vendor_proc_hw:s0
-genfscon proc /config u:object_r:vendor_proc_hw:s0
-genfscon proc /hw u:object_r:vendor_proc_hw:s0
 
 # Touchpanel
 genfscon sysfs /class/touchscreen u:object_r:vendor_sysfs_touchpanel:s0
@@ -92,6 +83,5 @@ genfscon sysfs /devices/platform/charger/power_supply/mtk-slv-hvdiv-chg/wakeup29
 genfscon sysfs /devices/platform/soc/1c804000.spmi/spmi-0/0-04/mt6377-gauge/power_supply/battery/wakeup32 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c804000.spmi/spmi-0/0-04/mt6377-gauge/power_supply/mtk-gauge/wakeup33 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/11b21000.i2c/i2c-5/5-0034/11b21000.i2c:mt6375@34:chg/power_supply/primary_chg/wakeup30 u:object_r:sysfs_wakeup:s0
-
-# Charger
-genfscon sysfs /devices/platform/charger/power_supply/mtk-master-charger u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/18002000.consys/wakeup                             u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/mtk-slv-hvdiv-chg/wakeup      u:object_r:sysfs_wakeup:s0
