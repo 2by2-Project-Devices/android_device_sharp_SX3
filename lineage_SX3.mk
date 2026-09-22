@@ -29,5 +29,6 @@ PRODUCT_MODEL := SX3
 PRODUCT_GMS_CLIENTID_BASE := android-sharp
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="SX3_00WW_FIH-user 15 AP3A.240905.015.A2 p1rck6991v164P11 release-keys" \
-    BuildFingerprint=SHARP/SX3_00WW/SX3:15/AP3A.240905.015.A2/00WW_3_330:user/release-keys
+    ProductModel=SH-53D \
+    BuildDesc="SH-53D-user 15 AP3A.240905.015.A2 38JP_3_330 release-keys" \
+    BuildFingerprint=DOCOMO/SH-53D/SH-53D:15/AP3A.240905.015.A2/38JP_3_330:user/release-keys
