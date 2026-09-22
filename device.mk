@@ -82,6 +82,7 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
+    fstab.enableswap \
     fstab.mt6833 \
     init.connectivity.rc \
     init.connectivity.common.rc \

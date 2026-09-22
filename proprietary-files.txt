@@ -1620,3 +1620,6 @@ vendor/firmware/WMT_SOC.cfg
 vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin
 vendor/firmware/soc2_2_ram_wifi_1a_1_hdr.bin
 vendor/firmware/wifi.cfg
+
+# ZRAM
+vendor/etc/init/hw/init.sx3.zram.rc
