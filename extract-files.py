@@ -186,6 +186,12 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.media.bufferpool2-V1-ndk.so', 'android.hardware.media.bufferpool2-V2-ndk.so'),
     'vendor/bin/hw/android.hardware.security.keymint@3.0-service.trustonic_norkp': blob_fixup()
         .binary_regex_replace(rb'ro\.board\.api_level\x00', b'ro.dummy.api_level\x00'),
+    'vendor/etc/libnfc-nxp.conf': blob_fixup()
+        .regex_replace(r'(DEFAULT_ISODEP_ROUTE\s*=\s*)0x00\b', r'\g<1>0xC0')
+        .regex_replace(r'(DEFAULT_SYS_CODE_ROUTE\s*=\s*)0x01\b', r'\g<1>0xC0')
+        .regex_replace(r'(DEFAULT_OFFHOST_ROUTE\s*=\s*)0x02\b', r'\g<1>0xC0')
+        .regex_replace(r'(OFFHOST_ROUTE_ESE\s*=\s*\{\s*)01\b', r'\g<1>C0')
+        .add_line_if_missing('DEFAULT_NFCF_ROUTE=0xC0'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
