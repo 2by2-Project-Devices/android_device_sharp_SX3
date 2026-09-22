@@ -1,6 +1,7 @@
 #!/vendor/bin/sh
 
 # Load all kernel modules listed in modules.load
+modprobe -a -d /system/lib/modules $(cat /system/lib/modules/modules.load)
 modprobe -a -d /vendor/lib/modules $(cat /vendor/lib/modules/modules.load)
 
 # Signal that all modules are loaded
