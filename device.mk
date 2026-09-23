@@ -203,10 +203,6 @@ PRODUCT_COPY_FILES += \
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# MotoActions
-PRODUCT_PACKAGES += \
-    MotoCommonOverlay
-
 # Media
 $(call soong_config_set_bool,android_hardware_mediatek_codec2,link_v33_libstagefright_foundation,true)
 PRODUCT_PACKAGES += \
