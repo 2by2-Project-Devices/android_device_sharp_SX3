@@ -1530,10 +1530,11 @@ vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 
 # Sensors
-vendor/lib64/hw/sensors.mediatek.V2.0.so;SYMLINK=vendor/lib64/hw/sensors.mt6833.so
+vendor/lib64/hw/sensors.mt6833.so
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhfmanagerwrapper.so
 vendor/lib64/libhwm.so
+vendor/lib64/libsensor_custom.so
 
 # Tether offload
 vendor/bin/hw/tetheroffloadservice
