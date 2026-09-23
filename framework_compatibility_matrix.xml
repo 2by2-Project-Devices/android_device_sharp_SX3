@@ -28,13 +28,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
-        <name>motorola.hardware.camera.imgtuner.aidl</name>
-        <interface>
-            <name>IImageTuning</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.mediatek.hardware.apuware.apusys</name>
         <version>2.0-1</version>
@@ -209,30 +202,11 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>com.motorola.hardware.biometric.fingerprint</name>
-        <version>1.1</version>
-        <interface>
-            <name>IMotoFingerPrint</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IMotoFingerPrintSensorTest</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="aidl" optional="true">
         <name>vendor.dolby.dms</name>
         <version>1</version>
         <interface>
             <name>IDms</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl">
-        <name>com.sharp.hardware.biometrics.fingerprint</name>
-        <interface>
-            <name>IFcntExlider</name>
             <instance>default</instance>
         </interface>
     </hal>

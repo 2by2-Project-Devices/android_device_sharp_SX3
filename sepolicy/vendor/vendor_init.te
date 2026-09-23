@@ -3,10 +3,6 @@ allow vendor_init proc:file write;
 rw_dir_file(vendor_init, sysfs_ged)
 rw_dir_file(vendor_init, sysfs_power_supply)
 
-# Mot props
-set_prop(vendor_init, system_mot_prop)
-set_prop(vendor_init, vendor_mot_prop)
-
 # Sku prop
 set_prop(vendor_init, vendor_nfc_prop)
 set_prop(vendor_init, vendor_sku_prop)

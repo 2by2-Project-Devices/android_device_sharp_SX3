@@ -125,9 +125,6 @@ PRODUCT_COPY_FILES += \
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
-# Dex-pre-opt exclusions
-$(call add-product-dex-preopt-module-config,MotoSignatureApp,disable)
-
 # Display
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     sys.brightness.disable_gamma_conversion=true
@@ -153,9 +150,6 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    com.motorola.hardware.biometric.fingerprint@1.0
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
@@ -195,10 +189,6 @@ PRODUCT_PACKAGES += \
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.SX3
-
-# Omadm
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/permissions/privapp-permissions-com.motorola.omadm.service.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-com.motorola.omadm.service.xml
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -326,7 +316,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
     hardware/google/pixel \
     hardware/google/interfaces \
-    hardware/motorola \
     hardware/mediatek/libmtkperf_client \
     hardware/mediatek
 

@@ -2,7 +2,6 @@
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
 ro.config.vc_call_vol_steps=8
-ro.vendor.audio.moto_sst_supported=false
 ro.vendor.mtk_audio_tuning_tool_ver=V1
 ro.vendor.mtk_hifiaudio_support=1
 vendor.audio.powerhal.power.hi_res=true
@@ -50,7 +49,6 @@ ro.vendor.mtk_camera_app_version=3
 ro.vendor.mtk_slow_motion_support=1
 vendor.camera.mdp.cz.enable=1
 vendor.camera.mdp.dre.enable=1
-vendor.camera.mot.jpegmaxscaleratio=2.5
 vendor.mtk.camera.app.fd.video=1
 
 # Crypto
@@ -266,7 +264,6 @@ ro.vendor.hw.ecompass=true
 ro.vendor.hw.fps=true
 ro.vendor.mag.calibration.in.sensorhub=yes
 ro.vendor.mtk.sensor.support=yes
-ro.vendor.sensors.mot_ltv=true
 ro.vendor.sensors.prox_for_call=true
 
 # Surface Flinger
