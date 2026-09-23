@@ -189,6 +189,11 @@ ro.vendor.mtk_nn_quant_preferred=1
 ro.dummy.api_level=30
 ro.hardware.kmsetkey=trustonic
 
+# Power
+vendor.powerhal.interaction.min=200
+vendor.powerhal.interaction.max=1000
+vendor.powerhal.interaction.offset=0
+
 # Radio
 persist.radio.multisim.config=dsds
 persist.sys.ams_ext_enabled=true
