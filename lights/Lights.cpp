@@ -66,7 +66,7 @@ static inline uint32_t scaleBrightness(uint32_t brightness,
     return 0;
   }
 
-  return (brightness - 1) * (maxBrightness - 19) / (0xFF - 1) + 19;
+  return (brightness - 1) * (maxBrightness - 1) / (0xFF - 1) + 1;
 }
 
 static inline uint32_t getScaledBrightness(const HwLightState &state,
