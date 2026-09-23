@@ -1,105 +1,84 @@
 on early-init
-    write /proc/sys/kernel/sched_pelt_multiplier 1
+    # boot perf. tune
+    write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "0 0 0 0"
+    write /sys/devices/platform/boot_dramboost/dramboost/dramboost 1
+
+on charger
+    #Set CPU/Dram init parameter
+    write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
+    write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
 
 on init
-    # Setup final cpuset
+    # update cpus for cpuset cgroup
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/camera-daemon/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-6
     write /dev/cpuset/foreground_window/cpus 0-6
-    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/restricted/cpus 0-3
-    write /dev/cpuset/camera-daemon/cpus 0-7
 
-    # Boot time tuning
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
-    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "performance"
-    write /sys/devices/platform/112b0000.ufshci/clkgate_enable 0
+    # boot time fs tune
+    write /sys/block/mmcblk0/queue/iostats 0
+    write /sys/block/mmcblk0/queue/nr_requests 256
+    write /sys/block/sdc/queue/iostats 0
+    write /sys/block/sdc/queue/nr_requests 256
 
-    # sched
-    write /proc/sys/kernel/sched_migration_cost_ns 250000
-    write /proc/sys/kernel/sched_latency_ns 4000000
-    write /proc/sys/kernel/sched_min_granularity_ns 500000
-    write /proc/sys/kernel/sched_wakeup_granularity_ns 2000000
+on late-init
+    # enable rcu_expedited
+    write /sys/kernel/rcu_expedited 1
 
-## Utilization Clamping
-    # Tuning
-    write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
-    write /proc/sys/kernel/sched_util_clamp_min 128
+on post-fs
+    # boot perf. tune
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 100"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 100"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 100"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 100"
 
-    # Real-Time tasks
-    write /dev/cpuctl/rt/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/rt/cpu.uclamp.max max
-    write /dev/cpuctl/rt/cpu.uclamp.min 0
-    write /dev/cpuctl/rt/cpu.shares 20480
-
-    # Background tasks for best efficiency
-    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
-    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
-    write /dev/cpuctl/background/cpu.shares 1024
-    write /dev/cpuctl/system-background/cpu.shares 1024
-    write /dev/cpuctl/background/cpu.uclamp.min 0
-    write /dev/cpuctl/background/cpu.uclamp.max 50
-    write /dev/cpuctl/system-background/cpu.uclamp.min 0
-    write /dev/cpuctl/system-background/cpu.uclamp.max 50
-
-    # Camera daemon tasks
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.max max
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 70
-    write /dev/cpuctl/camera-daemon/cpu.shares 20480
-
-    # dex2oat tasks
-    write /dev/cpuctl/dex2oat/cpu.uclamp.latency_sensitive 0
-    write /dev/cpuctl/dex2oat/cpu.uclamp.max 60
-    write /dev/cpuctl/dex2oat/cpu.uclamp.min 0
-    write /dev/cpuctl/dex2oat/cpu.shares 512
-
-    # Foreground tasks
-    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground/cpu.uclamp.min 0
-    write /dev/cpuctl/foreground/cpu.uclamp.max 80
-    write /dev/cpuctl/foreground/cpu.shares 20480
-
-    # Foreground window tasks
-    write /dev/cpuctl/foreground_window/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground_window/cpu.uclamp.min 0
-    write /dev/cpuctl/foreground_window/cpu.uclamp.max 80
-    write /dev/cpuctl/foreground_window/cpu.shares 10240
-
-    # NeuralNetwork API HAL tasks
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.max max
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.min 90
-    write /dev/cpuctl/nnapi-hal/cpu.shares 20480
-
-    # Top app tasks
-    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/top-app/cpu.uclamp.min 0
-    write /dev/cpuctl/top-app/cpu.uclamp.max max
-    write /dev/cpuctl/top-app/cpu.shares 20480
-
-    # system tasks
-    write /dev/cpuctl/system/cpu.shares 20480
-
-    # ZRAM Setup
+on post-fs-data
+    # zram
     write /sys/block/zram0/comp_algorithm lz4
     write /proc/sys/vm/page-cluster 0
+    write /proc/sys/vm/swappiness 100
+    write /sys/kernel/mm/swap/vma_ra_enabled true
 
 on property:sys.boot_completed=1
-    # Enable ZRAM on boot_complete
+    # Back to default VM settings
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 10
+
+    # zram writeback
+    setprop persist.sys.zram_enabled 1
     swapon_all /vendor/etc/fstab.mt6833
-    write /proc/sys/vm/swappiness 60
 
-    # PowerHAL Hint Processing
-    setprop vendor.powerhal.init 1
+    # We should adjust the setting upon boot_complete
+    write /sys/block/mmcblk0/queue/iostats 1
+    write /sys/block/mmcblk0/queue/nr_requests 128
+    write /sys/block/sdc/queue/iostats 1
+    write /sys/block/sdc/queue/nr_requests 128
 
-    # DVFS
+    write /sys/devices/system/cpu/eas/enable 2
+    write /proc/cpufreq/cpufreq_sched_disable 0
+
+    write /dev/stune/foreground/schedtune.prefer_idle 0
+    write /dev/stune/top-app/schedtune.boost 1
+    write /dev/stune/top-app/schedtune.prefer_idle 0
+    write /dev/stune/rt/schedtune.prefer_idle 0
+
+    write /proc/sys/kernel/sched_migration_cost_ns 200000
+
+    # restore perf. parameters
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 0"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 0"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 0"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 0"
+    write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
+    write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
+
+    # Configure DVFS
     write /sys/kernel/ged/hal/dvfs_margin_value 130
     write /sys/kernel/ged/hal/timer_base_dvfs_margin 798
     write /sys/kernel/ged/hal/loading_base_dvfs_step 4
 
-    # End boot time tuning
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "schedutil"
-    write /sys/devices/platform/112b0000.ufshci/clkgate_enable 1
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
